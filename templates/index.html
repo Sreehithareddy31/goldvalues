@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contacts">Contact Us</a></li>
+                <li><a href="#predict-form">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home" class="section home">
+            <div class="overlay">
+                <h1>GoldFusion: Cutting-Edge Price Predictions</h1>
+                <p>Welcome to our gold price prediction tool. Enter previous gold prices to get predictions for future prices.</p>
+                <a href="#get-started" class="button">Get Started</a>
+            </div>
+        </section>
+        <section id="about" class="section about">
+            <h2>About Us</h2>
+            <p class="intro">Welcome to Gold Price Predictor, where we blend technology and financial expertise to deliver precise gold price forecasts. Our mission is to empower investors and traders with reliable, data-driven insights to make informed decisions in the volatile gold market.</p>
+            
+            <div class="mission">
+                <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                <p>At Gold Price Predictor, we aim to provide accurate and actionable predictions for gold prices. By leveraging advanced machine learning algorithms and historical data analysis, we strive to help our users navigate the complexities of gold trading and investment with confidence.</p>
+            </div>
+            
+            <div class="technology">
+                <h3><i class="fas fa-robot"></i> Our Technology</h3>
+                <p>Our predictive model utilizes sophisticated LSTM (Long Short-Term Memory) networks to analyze historical gold prices and forecast future trends. LSTM networks are a type of recurrent neural network (RNN) that excels in capturing temporal dependencies in time series data, making them ideal for predicting financial metrics like gold prices.</p>
+            </div>
+            
+            <div class="applications">
+                <h3><i class="fas fa-chart-line"></i> Applications</h3>
+                <p>Our gold price prediction service is designed to cater to various needs in the financial and investment sectors:</p>
+                <ul>
+                    <li><strong>Investment Decisions:</strong> Traders and investors can use our predictions to make informed decisions about buying or selling gold, optimizing their investment strategies.</li>
+                    <li><strong>Portfolio Management:</strong> Financial advisors and portfolio managers can incorporate our forecasts into their asset allocation strategies, helping to balance and diversify investment portfolios.</li>
+                    <li><strong>Market Analysis:</strong> Analysts and researchers can utilize our data-driven insights to understand market trends, forecast price movements, and conduct comprehensive market research.</li>
+                    <li><strong>Financial Planning:</strong> Individuals planning their long-term financial goals can use our predictions to better anticipate potential future gold price fluctuations and adjust their plans accordingly.</li>
+                    <li><strong>Risk Management:</strong> Businesses and investors can use our forecasts to implement risk management strategies, hedging against potential adverse movements in gold prices.</li>
+                </ul>
+            </div>
+            
+            <div class="team">
+                <h3><i class="fas fa-users"></i> Our Team</h3>
+                <p>Our team consists of experienced data scientists, financial analysts, and software engineers dedicated to creating innovative solutions for the financial industry. We continuously refine our models and techniques to ensure our predictions are as accurate and reliable as possible.</p>
+            </div>
+            
+            <div class="why-choose-us">
+                <h3><i class="fas fa-check-circle"></i> Why Choose Us?</h3>
+                <ul>
+                    <li><strong>Expertise:</strong> Our team combines deep knowledge of machine learning and financial markets to deliver top-notch predictive analytics.</li>
+                    <li><strong>Accuracy:</strong> We use state-of-the-art algorithms and extensive historical data to provide precise forecasts.</li>
+                    <li><strong>User-Friendly:</strong> Our platform is designed with simplicity in mind, making it easy for users to enter data and interpret predictions.</li>
+                    <li><strong>Continuous Improvement:</strong> We are committed to ongoing research and development to enhance the accuracy and functionality of our prediction models.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="contact" class="section contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need further information, please feel free to reach out to us:</p>
+            <p>Email: contact@goldpricepredictor.com</p>
+            <p>Phone: +123-456-7890</p>
+        </section>
+        <section id="get-started" class="section">
+            <h2>Get Started</h2>
+            <p>Enter previous gold prices to predict future values:</p>
+            <form action="{{ url_for('predict') }}" method="post">
+                <label for="input">Enter previous prices (comma-separated):</label>
+                <input type="text" id="input" name="input">
+                <button type="submit">Predict</button>
+            </form>
+        </section>
+</body>
+</html>
